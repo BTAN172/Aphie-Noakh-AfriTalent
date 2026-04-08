@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+}
+body{
+    background: #f2f0f0;
+    line-height: 1.5;
+
+}
+
+.heros{
+     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar1.png);
+     gap: 100px;
+      padding: 100px;
+       align-items: center;
+       display: flex;
+       color: beige;
+}
+.a{
+    color: rgb(18, 12, 133);
+}
+.b{
+    color: rgb(193, 127, 4);
+}
+.nav{
+     margin-bottom: 80px;
+}
+.nav h1{
+    font-size: 60px;
+    text-align: center;
+}
+.nav h2{
+  font-size: 40px;
+  text-align: left;
+}
+.b2{
+  display: inline-block;
+  border: 1px, solid ;
+  padding: 7.5px 15px;
+  margin-top: 100px;
+  color: rgb(243, 243, 245);
+  border-radius:10px;
+  background: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px 5px rgb(244, 247, 248);  
+  
+}
+.b2:hover{
+     transform: rotate(10deg);
+    box-shadow: inherit;
+}
+footer{
+    background: black;
+    color: white;
+}
+/* formulaire */
+
+#form{
+    display: flex;
+    height: 50vh; 
+    font-size: 20px;
+     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar2.png);
+}
+#form form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;  
+    color: rgb(9, 9, 9);
+}
+#form form > div:not(#bt){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#form form > div input:not(#bt input){
+    width: 15em;
+    height: 2em;
+    background:rgb(245, 243, 243);
+    border-radius: 5px;
+}
+.section{
+     width: 15em;
+    height: 2em;
+    background:rgb(245, 243, 243);
+    border-radius: 5px;
+}
+#label{
+    width: 15em;
+    height: 2em; 
+}
+#bt{
+    display: flex;
+    justify-content: center; 
+    margin:20px ;
+} */
