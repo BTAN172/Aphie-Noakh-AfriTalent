@@ -1,25 +1,62 @@
 *{
     margin: 0;
 }
-body{
-    background: #f2f0f0;
-    line-height: 1.5;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+:root{
+     --border-radius: 10px;
+     --transition: all 0.3s ease;
+     --primary-color:rgb(255, 255, 255);
+     --secondary-color:rgb(4, 4, 4);
+     --accent-color: #ff6b00;
+     --font-size: 16px;
+}
+/* Pour les liens de la navbar */
+.nav-link:active {
+    color: var(--accent-color) !important; 
+}
+/* Pour un effet de fondu fluide */
+.nav-link:hover {
+    color: var(--accent-color)!important;
+    transition: 0.3s; 
+}
+/* Pour le bouton "Rejoindre AfriTalent" */
+.btn:active {
+    background-color: #00008B !important; 
+    border-color: #00008B !important;
+}
+.btn-custom-join {
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
 }
 
+.btn-custom-join:hover, .btn-custom-join:active {
+    background-color: var(--accent-color); /* Orange au survol/clic */
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+}
+body{
+    background: var(--primary-color);
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
 .heros{
      background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar1.png);
      gap: 100px;
       padding: 100px;
        align-items: center;
        display: flex;
-       color: beige;
+       color: var(--primary-color);
 }
 .a{
     color: rgb(18, 12, 133);
 }
 .b{
-    color: rgb(193, 127, 4);
+   color: var(--accent-color) !important;
 }
 .nav{
      margin-bottom: 80px;
@@ -38,60 +75,18 @@ body{
   padding: 7.5px 15px;
   margin-top: 100px;
   color: rgb(243, 243, 245);
-  border-radius:10px;
+  border-radius : var(--border-radius);
   background: transparent;
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 0 10px 5px rgb(244, 247, 248);  
   
 }
+
 .b2:hover{
      transform: rotate(10deg);
     box-shadow: inherit;
 }
-footer{
-    background: black;
-    color: white;
-}
-/* formulaire */
 
-#form{
-    display: flex;
-    height: 50vh; 
-    font-size: 20px;
-     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar2.png);
-}
-#form form{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2em;  
-    color: rgb(9, 9, 9);
-}
-#form form > div:not(#bt){
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#form form > div input:not(#bt input){
-    width: 15em;
-    height: 2em;
-    background:rgb(245, 243, 243);
-    border-radius: 5px;
-}
-.section{
-     width: 15em;
-    height: 2em;
-    background:rgb(245, 243, 243);
-    border-radius: 5px;
-}
-#label{
-    width: 15em;
-    height: 2em; 
-}
-#bt{
-    display: flex;
-    justify-content: center; 
-    margin:20px ;
-} */
+
+
