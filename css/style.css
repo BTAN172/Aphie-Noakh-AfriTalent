@@ -2,12 +2,13 @@
     margin: 0;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* Les six variables css dans root */
 :root{
      --border-radius: 10px;
      --transition: all 0.3s ease;
      --primary-color:rgb(255, 255, 255);
      --secondary-color:rgb(4, 4, 4);
-     --accent-color: #ff6b00;
+     --accent-color: #fca616;
      --font-size: 16px;
 }
 /* Pour les liens de la navbar */
@@ -16,34 +17,23 @@
 }
 /* Pour un effet de fondu fluide */
 .nav-link:hover {
-    color: var(--accent-color)!important;
-    transition: 0.3s; 
+    color: var(--accent-color)!important; 
 }
 /* Pour le bouton "Rejoindre AfriTalent" */
-.btn:active {
-    background-color: #00008B !important; 
-    border-color: #00008B !important;
-}
-.btn-custom-join {
-    border: 2px solid #fff;
-    color: #fff;
-    background: transparent;
-}
 
-.btn-custom-join:hover, .btn-custom-join:active {
-    background-color: var(--accent-color); /* Orange au survol/clic */
-    border-color: var(--accent-color);
-    color: var(--primary-color);
-}
-body{
-    background: var(--primary-color);
+body{ /* toutes les pages */
+    background: #eaeaea;
     line-height: 1.5;
     font-family: 'Montserrat', sans-serif;
+   
 }
-h1, h2, h3, h4 {
+ h2 {   /* toutes les pages */
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    color: rgb(241, 233, 233);
 }
+/* ================================INDEX.HTML================================= */
+/* Styliser la section heros */
 .heros{
      background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar1.png);
      gap: 100px;
@@ -52,23 +42,29 @@ h1, h2, h3, h4 {
        display: flex;
        color: var(--primary-color);
 }
+/* h1 section heros */
 .a{
-    color: rgb(18, 12, 133);
+    color: #00008B;
 }
+/* span-h1 section heros */
 .b{
-   color: var(--accent-color) !important;
+   color:var(--accent-color) !important;
 }
+/* nav de la section heros */
 .nav{
      margin-bottom: 80px;
 }
+/* h1 se trouvant dans nav de la section heros */
 .nav h1{
     font-size: 60px;
     text-align: center;
 }
+/* h2 se trouvant dans nav de la section heros */
 .nav h2{
   font-size: 40px;
   text-align: left;
 }
+/* style des deux boutons de la section heros */
 .b2{
   display: inline-block;
   border: 1px, solid ;
@@ -82,11 +78,239 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 10px 5px rgb(244, 247, 248);  
   
 }
-
 .b2:hover{
      transform: rotate(10deg);
     box-shadow: inherit;
 }
+/* div se trouvant dans nav de la section heros */
+.container-boutons { /* Espace entre les deux boutons */
+    display: flex;
+    gap: 80px; 
+}
+/* SECTION COMMENT CA MARCHE */
+/* Le conteneur parent */
+.bento-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-auto-rows: minmax(200px, auto);    /* Hauteur minimale des cases */
+    gap: 20px;                             /* L'espacement (important !) */
+    padding: 20px;
+}
+.h2{
+    text-align: center;
+    margin-top: 100px;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+}
+
+/* Style de base pour chaque article */
+.bento-grid article {
+    background: #f8f7f7;
+    border-radius: var(--border-radius); 
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+/* variation de la taille des blocs*/
+.bento-grid article:nth-child(1) {
+    grid-column: span 2; /* Le premier bloc prend 2 colonnes */
+}
+
+.bento-grid article:nth-child(4) {
+    grid-column: span 2; /* Le dernier bloc prend 2 colonnes */
+}
+/* Style de base des cartes */
+.expertise-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère par défaut */
+    transition: all 0.3s ease-in-out; /* Animation fluide pour tout changement */
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+/* --- categorie de services---// effet hover au survol */
+.card:hover {
+    /* 1. Transformation : Soulèvement de la carte */
+    transform: translateY(-25px); 
+    
+    /* 2. Ombre : Plus profonde pour l'effet de flottement */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    
+    /* 3. Changement de couleur de bordure ou fond */
+    border-color: rgb(18, 12, 133); 
+}
+
+/* Optionnel : Changer la couleur du titre au survol */
+.card:hover h5 {
+    color: var(--accent-color);
+}
+
+/* Style pour le nombre de freelances (le span) */
+.card span {
+    font-weight: bold;
+    color:  #14203e; /* Un bleu pour attirer l'oeil sur le chiffre */
+}
+.grille-container {
+  display: grid; /* Active la grille */
+  
+  /* Crée 3 colonnes de taille égale (1 fraction de l'espace disponible) */
+  grid-template-columns: repeat(3, 1fr); 
+   /* Espacement entre les colonnes et les lignes (optionnel) */
+  gap: 50px; 
+}
+.item {
+  background-color: #d49191;
+}
+/* ==========================FREELANCE.HTML======================== */
+#section{
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar2.png);
+    background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
+    background-position: center; 
+    min-height: 700px;           /* Ajuste la hauteur de l image */
+    width: 100%;
+    padding-top: 100px;          /* Ajoute du padding pour que le texte ne colle pas à la navbar */
+}
+
+.catalogue{ 
+    color: #f8e9e9;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 700;
+    padding: 80px;
+}
+.solution{
+    color:#fde9e9;
+    font-size: 40px;
+    text-align: center;
+     font-weight: 400;
+}
+
+#filtre{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+/* =====================================Tarifs.html=================================== */
+.pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+         .card h5 {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin: 15px 0;
+        }
+
+        .description {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .features {
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #0c0c0c;
+        }
+        /* =============================about.html================================ */
+        #nav{
+        background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar3.png);
+        background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
+        background-position: center; 
+        min-height: 700px;           /* Ajuste la hauteur de l image */
+        padding-top: 100px;          /* Ajoute du padding pour que le texte ne colle pas à la navbar */
+        }
+        .nav-h{
+            text-align: center;
+            color:var(--accent-color);
+            font-family: 'Times New Roman', Times, serif;
+            font-size:60px ;
+        }
+        #nav h3{
+            color: white;
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 30px;
+        }
+/* ====================== CONTACT.HTML ====================== */
+
+#contact-form {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+#contact-form .form-control,
+#contact-form .form-select {
+    border-radius:var(--border-radius);
+    padding: 12px;
+    border: 1px solid #ddd; 
+}
+
+#contact-form .form-control:focus,
+#contact-form .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem var(--accent-color);
+}
+
+#contact-form textarea {
+    resize: none;
+}
+
+#contact-form .form-label {
+    font-weight: 500;
+}
+
+#contact-form .error-message {
+    font-size: 0.85rem;
+}
+
+#submit-btn {
+    border-radius:var(--border-radius);
+    padding: 12px;
+    font-weight: 600;
+}
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+#success-message {
+    border-radius: var(--border-radius);
+}
+        
+
+        
 
 
 

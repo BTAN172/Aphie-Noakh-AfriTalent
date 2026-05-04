@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <header class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
           <img src="images/logos.png" width="150" height="50">
             <nav class="container-fluid">
                 <div class="collapse navbar-collapse " id="navbarnav">
@@ -18,50 +18,148 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifs.html">Tarifs</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">A propos</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
-                        <button id="btn btn-custom">Rejoindre AfriTalent</button>
+                        <div class="d-flex align-items-center ms-3 gap-2">
+                            <a href="contact.html" class="btn btn-warning">Rejoindre AfriTalent</a>
+                        </div>
+                    </ul>
                     </ul>
                 </div>
             </nav>
         </header>
-    <section>
+    <section id="section">
         <div>
-            <h2>Plans et tarifations</h2>
-            
-            
-            <div>
-                <h3>Gratuit</h3>
-                <h2>0€ / mois</h2>
-                <h2>Indépendants débutants</h2>
-                <ul>
-                     <li> Profil verifié ✅</li>
-                     <li> Matching IA ❌</li>
-                </ul>
-                <button>Choisir</button>
+            <h3 class="catalogue">Plans et tarifications</h3>
+            <h4 class="solution">Une tarification flexible qui s'adapte à votre croissance.</h4>
+        </div>
+    </section>
+
+    <section id="filtre">
+        <div class="pricing-grid">
+            <div class="card">
+                <h5 class="price">Gratuit</h5>
+                <h3>0€/ mois</h3>
+                <h6 class="description">Indépendants débutants</h6>
+                <ul class="features">
+                     <li>✅ Profil verifié </li>
+                     <li>❌ Matching IA </li>
+                     <li>✅Accès aux missions de base</li>
+                     <li>✅3 candidature par mois</li>
+                     <li>❌Support prioritaire</li>
+               </ul>
+                <div class="card-footer bg-transparent border-5">
+                    <a href="contact.html" class="btn btn-outline-warning w-100">choisir</a>
+                </div> 
             </div>
-            <div>
-                <h3>Pro</h3>
-                <h2>29€ / mois</h2>
-                <h2>Freelances confirmée</h2>
-                <ul>
-                     <li> Profil verifié ✅</li>
-                     <li> Matching IA ✅ (Prioritaire)</li>
+            <div class="card">
+                <h5 class="price">Pro</h5>
+                <h3>29€/ mois </h3>
+                <h6 class="description">Freelances confirmée</h6>
+                <ul class="features">
+                     <li>✅Profil verifié </li>
+                     <li>✅ Matching IA prioritaire</li>
+                     <li>✅Accès illimité aux missions</li>
+                     <li>✅15candidatures par mois</li>
+                     <li>✅Statistiques détaillées</li>
                 </ul>
-                <button>Choisir</button>
+                <div class="card-footer bg-transparent border-5">
+                    <a href="contact.html" class="btn btn-outline-warning w-100">choisir</a>
+                </div> 
             </div>
-            <div>
-                <h3>Entreprise</h3>
-                <h2>99€ / mois</h2>
-                <h2>Agences et grands groupes</h2>
-                <ul>
-                     <li> Profil verifié ✅</li>
-                     <li> Matching IA ✅(Sur mesure)</li>
+
+            <div class="card">
+                <h5 class="price">Entreprise</h5>
+                <h3>99€/ mois</h3>
+                <h6 class="description">Agences et grands groupes</h6>
+                <ul class="features">
+                     <li>✅ Profil verifié </li>
+                     <li>✅Matching IA sur mesure</li>
+                     <li>✅Accès illimité aux freelances </li>
+                     <li>✅Nombre de candidatures illimité </li>
+                     <li>✅Support dédié 7j/7</li>
                 </ul>
-                <button>Choisir</button>
+               <div class="card-footer bg-transparent border-5">
+                    <a href="contact.html" class="btn btn-outline-warning w-100">choisir</a>
+                </div> 
             </div>
         </div>
     </section>
+
+    <!-- faq en accordion bootstrap-->
+     <section class="container" style="margin-bottom: 100px;">
+    <h2 class="text-center mb-5 text-warning ">Questions Fréquemment Posées</h2>
+    
+    <div class="accordion" id="faqPlatform">
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Comment puis-je créer un compte sur la plateforme ?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqPlatform">
+                <div class="accordion-body">
+                    L'inscription est simple et rapide. Cliquez sur le bouton "S'inscrire" en haut à droite, remplissez vos informations de base et validez votre email pour accéder à toutes nos fonctionnalités.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Quels sont les modes de paiement acceptés ?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqPlatform">
+                <div class="accordion-body">
+                    Nous acceptons les cartes bancaires (Visa, MasterCard), ainsi que les paiements via PayPal et Stripe pour garantir une sécurité maximale lors de vos transactions.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Est-il possible de changer de plan tarifaire en cours de route ?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqPlatform">
+                <div class="accordion-body">
+                    Absolument. Vous pouvez passer à une offre supérieure ou inférieure à tout moment depuis les paramètres de votre compte. La différence de prix sera calculée au prorata.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Mes données personnelles sont-elles sécurisées ?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqPlatform">
+                <div class="accordion-body">
+                    La sécurité est notre priorité. Toutes vos données sont chiffrées et nous appliquons les protocoles de protection les plus récents pour garantir la confidentialité de vos échanges.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Comment contacter le support technique en cas de problème ?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqPlatform">
+                <div class="accordion-body">
+                    Notre équipe est disponible 24h/24 et 7j/7 via le chat en direct intégré à votre tableau de bord ou par email à l'adresse support@votreplateforme.com.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
     <!-- pied de page -->
-    <footer  class="bg-dark text-white py-4" >
+    <footer  class="bg-black text-white py-4" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 text-end">
@@ -72,7 +170,7 @@
                       <p>La plateforme n°1 de mise <br> en relation tech en Afrique. </p>
                     </div>
                    <div class="col-md-2">
-                       <h4 style="color: #FF8C00;" class="fw-bold">Liens utiles</h4>
+                       <h4 style="color:#00008B;" class="fw-bold">Liens utiles</h4>
                         <ul class="list-unstyled">
                             <li><a href="about.html" class="text-decoration-none text-white">A propos</a></li>
                             <li><a href="tarifs.html" class="text-decoration-none text-white">Tarifs</a></li>
@@ -83,9 +181,9 @@
                         <p> Blog <br>Tech & Freelance <br> Guides Carrière</p>
                    </div>
                    <div class="col-md-2">
-                    <h4 style="color: #FF8C00;" class="fw-bold">Contact</h4>
-                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="30" height="30"></a>
-                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="30" height="30"></a>
+                    <h4 style="color:#00008B;" class="fw-bold">Contact</h4>
+                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="40" height="40"></a>
+                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="40" height="40"></a>
                         <a href="callto:+221781727714"><img src="images/tel.png" width="30" height="30"></a>
                    </div>
                 </div>

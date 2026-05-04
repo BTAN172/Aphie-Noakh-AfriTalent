@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+     <header class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
           <img src="images/logos.png" width="150" height="50">
             <nav class="container-fluid">
                 <div class="collapse navbar-collapse " id="navbarnav">
@@ -18,63 +18,189 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifs.html">Tarifs</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">A propos</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
-                        <button id="btn btn-custom-join">Rejoindre AfriTalent</button>
+                        <div class="d-flex align-items-center ms-3 gap-2">
+                            <a href="contact.html" class="btn btn-warning">Rejoindre AfriTalent</a>
+                        </div>
                     </ul>
                 </div>
             </nav>
         </header>
-    <h2>Catalogue de freelances</h2>
-    <section>
-        <div>
-            <article>
-                <img src="images/h.png" width="100" height="100">
-                <h3>Ravi Z <br> Dévéloppeur fuullstack</h3>
-                <p>spécialisé dans les architectures micro-services scalables <br>	45€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/f.png" width="100" height="100">
-                <h3>Rayonne C <br> Product Designer UI/UX</h3>
-                <p>Créatrice d'expériences mobiles immersives. <br>55€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/h.png" width="100" height="100">
-                <h3>Horeb L <br>Data scientist </h3>
-                <p>Expert en analyse prédictive et déploiement de modèles de Machine Learning sur mesure. <br>	70€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/h.png" width="100" height="100">
-                <h3>Beni I <br>Ingénieur DevOps </h3>
-                <p>Spécialiste en automatisation des pipelines CI/CD pour une haute disponibilité. <br>	65€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/f.png" width="100" height="100">
-                <h3> Triomphe C <br>Développeuse Frontend </h3>
-                <p>Passionnée par la performance Web et les animations CSS fluides.  <br>	40€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/h.png" width="100" height="100">
-                <h3>Winner C <br>Motion Designer </h3>
-                <p>Je transforme vos concepts en vidéos explicatives et interfaces animées percutantes. <br>50€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/f.png" width="100" height="100">
-                <h3>Florianne J <br>Experte en cybersécurité </h3>
-                <p>Certifié pour la protection des données et la sécurisation des infrastructures Cloud.<br>85€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/f.png" width="100" height="100">
-                <h3> Délices B <br>Redactrice tech </h3>
-                <p> Je vulgarise vos solutions complexes en documentation claire et articles de blog SEO.<br>35€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
-            <article>
-                <img src="images/h.png" width="100" height="100">
-                <h3>Paul N <br>Consultant cloud </h3>
-                <p> Accompagnement stratégique pour la migration de vos serveurs vers des solutions hybrides.<br>75€/h <br>	⭐⭐⭐⭐⭐</p>
-            </article>
+        
+        <section id="section">
+            <div>
+                <h3 class="catalogue">Catalogue de freelances</3>
+                <h4 class="solution">La solution clé en main pour collaborer avec des experts qualifiés.</h4>
+            </div>
+        </section>
+
+         <!-- section filtre -->
+    <div id="filtre">
+        <div class="filters d-flex flex-wrap gap-2 justify-content-center" id="filters">
+            <button class="filter-btn btn btn-outline-warning active" data-filter="all">Tous</button>
+            <button class="filter-btn btn btn-outline-warning" data-filter="création">Création Digitale & Expérience Utilisateur</button>
+            <button class="filter-btn btn btn-outline-warning" data-filter="developpement">Développement & Ingénierie Technique</button>
+            <button class="filter-btn btn btn-outline-warning" data-filter="intelligence">Intelligence de Données & Sécurité</button>
         </div>
+    </div>
+
+    <section class="container mt-5" >
+        <div class="row g-5"  id="filtre">
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                    <img src="images/h.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">Ravi Z <br> <span class="text-primary fw-bold">Dévéloppeur fullstack</span></h5>
+                        <p class="text-muted mt-3">spécialisé dans les architectures micro-services scalables</p> 
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="badge bg-light text-dark">45€/h </span>
+                            <span class="text-warning">⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/f.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                       <h5 class="card-title mb-0">Rayonne C <br> <span class="text-primary fw-bold">Product Designer UI/UX </span></h5>
+                       <p class="text-muted mt-3">Créatrice d'expériences mobiles immersives.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                           <span class="badge bg-light text-dark">55€/h</span>
+                           <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                        </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/h.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                    <div class="card-body">
+                      <h5 class="card-title mb-0">Horeb L <br> <span class="text-primary fw-bold">Data scientist  </span></h5>
+                      <p class="text-muted mt-3">Expert en analyse prédictive et déploiement de modèles de Machine Learning sur mesure.</p>
+                       <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">70€/h</span>
+                          <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                       </div>
+                     </div>
+                     <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>  
+            </article>
+
+             <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/h.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                       <h5 class="card-title mb-0">Beni I <br> <span class="text-primary fw-bold">Ingénieur DevOps </span> </h5>
+                       <p class="text-muted mt-3">Spécialiste en automatisation des pipelines CI/CD pour une haute disponibilité.</p>
+                       <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">65€/h</span>
+                          <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                       </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>  
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/f.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                       <h5 class="card-title mb-0">Triomphe C <br> <span class="text-primary fw-bold">Développeuse Frontend  </span></h5>
+                       <p class="text-muted mt-3">Passionnée par la performance Web et les animations CSS fluides.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">40€/h </span>
+                          <span class="text-warning">⭐⭐⭐⭐</span>
+                       </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/h.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                        <h5 class="card-title mb-0">Winner C <br> <span class="text-primary fw-bold">Motion Designer </span> </h5>
+                        <p class="text-muted mt-3">Je transforme vos concepts en vidéos explicatives et interfaces animées percutantes.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">50€/h </span>
+                          <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                        </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/f.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                      <h5 class="card-title mb-0">Florianne J <br> <span class="text-primary fw-bold">Experte en cybersécurité </span> </h5>
+                      <p class="text-muted mt-3">Certifié pour la protection des données et la sécurisation des infrastructures Cloud.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="badge bg-light text-dark">85€/h</span>
+                            <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                        </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/f.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                      <h5 class="card-title mb-0"> Délices B <br> <span class="text-primary fw-bold">Redactrice tech </span> </h5>
+                      <p class="text-muted mt-3"> Je vulgarise vos solutions complexes en documentation claire et articles de blog SEO.</p>
+                       <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">35€/h </span>
+                          <span class="text-warning">⭐⭐⭐⭐</span>
+                       </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-3">
+                   <img src="images/h.png" class="rounded-circle mx-auto mt-3" width="100" height="100">
+                   <div class="card-body">
+                      <h5 class="card-title mb-0">Paul N <br> <span class="text-primary fw-bold">Consultant cloud  </span></h5>
+                      <p class="text-muted mt-3"> Accompagnement stratégique pour la migration de vos serveurs vers des solutions hybrides.</p>
+                       <div class="d-flex justify-content-between align-items-center mt-auto">
+                          <span class="badge bg-light text-dark">75€/h</span>
+                          <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                       </div>
+                   </div>
+                   <div class="card-footer bg-transparent border-5">
+                        <a href="#" class="btn btn-outline-warning w-100">Voir le profil</a>
+                    </div>  
+                </div>
+            </article>
+        </div> 
     </section>
     <!-- pied de page -->
-    <footer  class="bg-dark text-white py-4" >
+    <footer  class="bg-black text-white py-4" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 text-end">
@@ -85,7 +211,7 @@
                       <p>La plateforme n°1 de mise <br> en relation tech en Afrique. </p>
                     </div>
                    <div class="col-md-2">
-                       <h4 style="color: #FF8C00;" class="fw-bold">Liens utiles</h4>
+                       <h4 style="color:#00008B;" class="fw-bold">Liens utiles</h4>
                         <ul class="list-unstyled">
                             <li><a href="about.html" class="text-decoration-none text-white">A propos</a></li>
                             <li><a href="tarifs.html" class="text-decoration-none text-white">Tarifs</a></li>
@@ -96,14 +222,14 @@
                         <p> Blog <br>Tech & Freelance <br> Guides Carrière</p>
                    </div>
                    <div class="col-md-2">
-                    <h4 style="color: #FF8C00;" class="fw-bold">Contact</h4>
-                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="30" height="30"></a>
-                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="30" height="30"></a>
+                    <h4 style="color:#00008B;" class="fw-bold">Contact</h4>
+                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="40" height="40"></a>
+                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="40" height="40"></a>
                         <a href="callto:+221781727714"><img src="images/tel.png" width="30" height="30"></a>
                    </div>
                 </div>
             </div>
-            <p class="text-center mb-0">&copy; 2026 AfriTalent by BTAN tous droits reservés</p>
+            <p class="text-center mb-0"> &copy; 2026 AfriTalent by BTAN tous droits reservés</p>
         </footer>
     </body>
 </html>
