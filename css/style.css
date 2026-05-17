@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 /* Les six variables css dans root */
 :root{
-     --border-radius: 10px;
+     --border-radius: 12px;
      --transition: all 0.3s ease;
      --primary-color:rgb(255, 255, 255);
      --secondary-color:rgb(4, 4, 4);
@@ -93,7 +93,7 @@ body{ /* toutes les pages */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
     grid-auto-rows: minmax(200px, auto);    /* Hauteur minimale des cases */
-    gap: 20px;                             /* L'espacement (important !) */
+    gap: 20px;                             /* L'espacement  */
     padding: 20px;
 }
 .h2{
@@ -122,7 +122,7 @@ body{ /* toutes les pages */
 /* Style de base des cartes */
 .expertise-card {
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     padding: 20px;
     margin: 15px;
     text-align: center;
@@ -144,7 +144,7 @@ body{ /* toutes les pages */
     border-color: rgb(18, 12, 133); 
 }
 
-/* Optionnel : Changer la couleur du titre au survol */
+/* Changer la couleur du titre au survol */
 .card:hover h5 {
     color: var(--accent-color);
 }
@@ -160,12 +160,12 @@ body{ /* toutes les pages */
   /* Crée 3 colonnes de taille égale (1 fraction de l'espace disponible) */
   grid-template-columns: repeat(3, 1fr); 
    /* Espacement entre les colonnes et les lignes (optionnel) */
-  gap: 50px; 
+  gap: 40px; 
 }
 .item {
   background-color: #d49191;
 }
-/* ==========================FREELANCE.HTML======================== */
+/* ==============================FREELANCE.HTML==============================*/
 #section{
     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar2.png);
     background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
@@ -193,34 +193,19 @@ body{ /* toutes les pages */
     margin-top: 100px;
     margin-bottom: 100px;
 }
-/* =====================================Tarifs.html=================================== */
-.pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: center;
-
-        }
+/* ==============================Tarifs.html============================== */
         .card {
             background: white;
             padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
             text-align: center;
             position: relative;
             transition: transform 0.3s ease;
             border: 2px solid transparent;
         }
-         .card h5 {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
         .price {
             font-size: 2.5rem;
-            color: var(--dark);
+            color: var(--secondary-color);
             margin: 15px 0;
         }
 
@@ -231,19 +216,13 @@ body{ /* toutes les pages */
             display: block;
         }
 
-        .features {
-            padding: 0;
-            margin: 30px 0;
-            text-align: left;
-        }
-
         .features li {
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             color: #0c0c0c;
         }
-        /* =============================about.html================================ */
+/* ==============================about.html============================== */
         #nav{
         background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar3.png);
         background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
@@ -262,11 +241,11 @@ body{ /* toutes les pages */
             font-family: 'Montserrat', sans-serif; 
             font-size: 30px;
         }
-/* ====================== CONTACT.HTML ====================== */
+/* ================================= CONTACT.HTML =========================== */
 
 #contact-form {
     background-color: var(--primary-color);
-    padding: 2rem;
+    padding: 12px;
     border-radius: var(--border-radius);
 }
 
@@ -307,6 +286,75 @@ body{ /* toutes les pages */
 
 #success-message {
     border-radius: var(--border-radius);
+}
+/* ========================MEDIA QUERIES================= */
+/*1. MOBILE (Testé à 375px)*/
+@media (max-width: 767px) {
+    /* On réduit la section Héros pour qu'elle ne déborde pas */
+    .heros {
+        padding: 40px 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    /* On réduit les titres massifs de 60px à 32px pour mobile */
+    .nav h1, .catalogue, .nav-h {
+        font-size: 32px !important;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    /* On réduit les sous-titres de 40px à 20px */
+    .nav h2, .solution, #nav h3 {
+        font-size: 20px !important;
+        text-align: center;
+    }
+
+    /* Empiler les boutons de la section Héros */
+    .container-boutons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .b2 {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Transformer les grilles Bento et Expertise en 1 seule colonne */
+    .bento-grid, .grille-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .bento-grid article:nth-child(1),
+    .bento-grid article:nth-child(4) {
+        grid-column: span 1 !important;
+    }
+}
+
+/*2. TABLETTE (Testé à 768px)*/
+@media (min-width: 768px) and (max-width: 1199px) {
+    .nav h1, .catalogue, .nav-h {
+        font-size: 45px;
+    }
+
+    /* Grilles en 2 colonnes sur tablette */
+    .bento-grid, .grille-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/*3. DESKTOP (Tessté à 1200px)*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    
+    /* je garde mes styles originaux (60px) qui sont parfaits ici */
 }
         
 
