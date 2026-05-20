@@ -22,7 +22,7 @@
 /* Pour le bouton "Rejoindre AfriTalent" */
 
 body{ /* toutes les pages */
-    background: #eaeaea;
+    background: var(--bs-body-bg);
     line-height: 1.5;
     font-family: 'Montserrat', sans-serif;
    
@@ -356,7 +356,144 @@ body{ /* toutes les pages */
     
     /* je garde mes styles originaux (60px) qui sont parfaits ici */
 }
-        
+   
+/* ====================STYLISATION DU SOMBRE GLOBAL ==================== */
+
+/* --- 1. CONFIGURATION EN MODE CLAIR (RETOUR STRICT À TON DESIGN) --- */
+html[data-bs-theme="light"] body {
+    background-color: #eaeaea !important;
+}
+
+html[data-bs-theme="light"] section, 
+html[data-bs-theme="light"] .py-5, 
+html[data-bs-theme="light"] .bg-white {
+    background-color: transparent !important; 
+}
+    
+html[data-bs-theme="light"] .form-control, 
+html[data-bs-theme="light"] input, 
+html[data-bs-theme="light"] textarea, 
+html[data-bs-theme="light"] select {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+}
+
+/* NAVBAR DYNAMIQUE ET BOUTON RETOUR EN HAUT */
+
+/* Style initial de la navbar (tout en haut) */
+.navbar {
+    padding: 20px 0 !important;
+    background-color: #000000 !important; /* Ton fond noir de départ */
+    transition: padding 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+/* Effet appliqué à la navbar lors du scroll */
+.navbar.navbar-scrolled {
+    padding: 10px 0 !important; /* Effet shrink */
+    background-color: rgba(0, 0, 0, 0.95) !important; /* Fond noir légèrement translucide */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important; /* Ombre portée */
+}
+
+/* Style de base du bouton de retour en haut */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Affichage du bouton via le JavaScript */
+#backToTop.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Effet au survol du bouton */
+#backToTop:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation fluide de transition globale */
+body, section, .card, article, .item, input, textarea, label {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- 2. CONFIGURATION EN MODE SOMBRE (UNIQUEMENT SUR ACTIVATION) --- */
+html[data-bs-theme="dark"] body {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+html[data-bs-theme="dark"] section,
+html[data-bs-theme="dark"] .bg-white,
+html[data-bs-theme="dark"] div[class*="bg-"] {
+    background-color: #121212 !important;
+}
+
+html[data-bs-theme="dark"] .card, 
+html[data-bs-theme="dark"] article, 
+html[data-bs-theme="dark"] .bento-grid article, 
+html[data-bs-theme="dark"] .item,
+html[data-bs-theme="dark"] .shadow-sm {
+    background-color: #1e1e1e !important;
+    border: 1px solid #2d2d2d !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-bs-theme="dark"] .navbar.navbar-scrolled {
+    background-color: #1a1a1a !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    border-bottom: 1px solid #2d2d2d !important;
+}
+
+html[data-bs-theme="dark"] #backToTop {
+    background-color: #fca616 !important;
+    border: 1px solid #121212 !important;
+}
+
+html[data-bs-theme="dark"] h1, 
+html[data-bs-theme="dark"] h2, 
+html[data-bs-theme="dark"] h3, 
+html[data-bs-theme="dark"] h4, 
+html[data-bs-theme="dark"] h5, 
+html[data-bs-theme="dark"] h6, 
+html[data-bs-theme="dark"] p, 
+html[data-bs-theme="dark"] span, 
+html[data-bs-theme="dark"] li, 
+html[data-bs-theme="dark"] a:not(.btn) {
+    color: #ffffff !important;
+}
+
+html[data-bs-theme="dark"] input, 
+html[data-bs-theme="dark"] textarea, 
+html[data-bs-theme="dark"] select, 
+html[data-bs-theme="dark"] .form-control {
+    background-color: #2b2b2b !important;
+    color: #ffffff !important;
+    border-color: #444444 !important;
+}
+
+html[data-bs-theme="dark"] .form-floating > label {
+    color: #aaaaaa !important;
+    background-color: transparent !important;
+}
+
+/* ==================== EFFET DE TRANSITION FLUIDE ==================== */
+body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 
         
 
