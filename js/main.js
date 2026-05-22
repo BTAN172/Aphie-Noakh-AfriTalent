@@ -88,3 +88,136 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// ====================COMPTEURS DE STATISTIQUES AU SCROLL====================
+
+// On attend que le document HTML soit complètement chargé avant d'exécuter le script
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Sélection de tous les éléments HTML qui possèdent la classe 'counter'
+    const counters = document.querySelectorAll('.counter');
+    
+    // Durée totale souhaitée pour l'animation (en millisecondes : 2000ms = 2 secondes)
+    const animationDuration = 2000; 
+
+    /**
+     * Fonction responsable de l'animation d'un compteur individuel
+     * @param {HTMLElement} counter - L'élément HTML à animer
+     */
+    const animateCounter = (counter) => {
+        // Récupération de la valeur cible stockée dans l'attribut HTML 'data-target'
+        // Le signe '+' transforme la chaîne de caractères (string) en un nombre manipulable (number)
+        const target = +counter.getAttribute('data-target'); 
+        
+        // Enregistre le moment précis (en millisecondes) où l'animation commence
+        const startTime = performance.now();
+
+        /**
+         * Fonction interne appelée en boucle par le navigateur pour mettre à jour le chiffre
+         * @param {number} currentTime - Le temps actuel fourni par requestAnimationFrame
+         */
+        const updateCount = (currentTime) => {
+            // Calcul du temps qui s'est écoulé depuis le début de l'animation
+            const elapsedTime = currentTime - startTime;
+            
+            // Calcul du pourcentage de progression (entre 0.0 et 1.0)
+            // Math.min évite de dépasser 1.0 même si le temps calculé déborde légèrement
+            const progress = Math.min(elapsedTime / animationDuration, 1);
+            
+            // Calcul de la valeur intermédiaire correspondante à la progression
+            // Math.floor permet d'obtenir un nombre entier (pas de décimales pendant le décompte)
+            const currentValue = Math.floor(progress * target);
+            
+            // Affichage de la valeur actuelle dans la balise HTML
+            counter.innerText = currentValue;
+
+            // Tant que la progression n'est pas arrivée à son maximum (1), on continue
+            if (progress < 1) {
+                // Demande au navigateur de rappeler 'updateCount' dès la prochaine image (frame) disponible
+                requestAnimationFrame(updateCount);
+            } else {
+                // Par sécurité, une fois le temps écoulé, on affiche exactement la valeur cible finale
+                counter.innerText = target; 
+            }
+        };
+
+        // Initialisation du premier cycle d'animation
+        requestAnimationFrame(updateCount);
+    };
+
+    /**
+     * 2. Configuration de l'Intersection Observer
+     * Cet outil surveille la position des compteurs par rapport à l'écran visible (viewport).
+     */
+    const observerOptions = {
+        root: null,         // Utilise l'écran du navigateur comme zone de référence
+        threshold: 0.2      // Déclenche l'action dès que 20% de l'élément est visible à l'écran
+    };
+
+    // Création de l'observateur avec la logique de déclenchement
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Si l'élément surveillé entre dans le champ de vision
+            if (entry.isIntersecting) {
+                const counter = entry.target; // On récupère l'élément en question
+                
+                // Lance l'animation de chiffres pour cet élément
+                animateCounter(counter);
+                
+                // Très important : On dit à l'observateur d'arrêter de surveiller cet élément.
+                // Cela évite de relancer l'animation à chaque fois que l'utilisateur remonte et redescend.
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+
+    // 3. Liaison de l'observateur à nos éléments HTML
+    // On passe en revue chaque compteur trouvé sur la page pour le mettre sous surveillance
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+});
+
+// ====================SECTIONS QUI APPARAISSENT EN FONDU====================
+// On s'assure que le DOM (l'arbre HTML) est totalement chargé avant d'exécuter le script
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeOptions = {
+        // 'root: null' signifie que la zone de détection est la fenêtre visible du navigateur (le viewport)
+        root: null,         
+        
+        // 'threshold: 0.2' déclenche l'action dès que 30% de la section ciblée est visible à l'écran
+        threshold: 0.2,     
+        
+        // 'rootMargin' applique une marge virtuelle au bas de l'écran. 
+        // '-100px' retarde légèrement le déclenchement pour que l'effet s'active 
+        // proprement juste après que la section a franchi le bas de l'écran.
+        rootMargin: "0px 0px -100px 0px" 
+    };
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+        // On passe en revue chaque élément surveillé qui a changé d'état (entré ou sorti de l'écran)
+        entries.forEach(entry => {
+            
+            // On vérifie si l'élément est actuellement visible à l'écran (isIntersecting)
+            if (entry.isIntersecting) {
+                
+                // Récupération de l'élément HTML en cours d'intersection
+                const currentSection = entry.target;
+                
+                // On lui ajoute la classe CSS 'is-visible' pour lancer l'animation CSS (opacité et déplacement)
+                currentSection.classList.add('is-visible');
+                
+                // PERFORMANCE OPTIMISATION : Une fois la section visible, il est inutile de continuer 
+                // à la surveiller. On dit à l'observateur d'arrêter (unobserve) pour libérer de la mémoire.
+                observer.unobserve(currentSection);
+            }
+        });
+    }, fadeOptions); // On associe les options de configuration définies plus haut
+    // On cible toutes les sections ou blocs de la page contenant la classe '.fade-in-section'
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    
+    // On applique l'observateur individuellement sur chaque section trouvée
+    fadeSections.forEach(section => {
+        fadeObserver.observe(section);
+    });
+    
+});

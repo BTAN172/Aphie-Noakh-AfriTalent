@@ -494,6 +494,43 @@ body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* ====================SECTIONS QUI APPARAISSENT EN FONDU==================== */
+/* Configuration de l'etat masqué (état initial) */
+
+.fade-in-section {
+    /* Rend l'élément complètement transparent au départ */
+    opacity: 0;
+    
+    /* Déplace l'élément de 20 pixels vers le bas sur l'axe vertical (Y) */
+    transform: translateY(20px);
+    
+    /* Définit une transition fluide de 0.6 seconde avec un effet de ralentissement à la fin (ease-out) */
+    /* On applique cette transition simultanément sur l'opacité et sur la transformation */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    
+    /* Optimisation des performances : indique au navigateur de préparer la carte graphique */
+    /* pour animer ces propriétés sans saccades ni ralentissements */
+    will-change: opacity, transform;
+}
+/* Configuration de l'etat visible (état final) */
+
+.fade-in-section.is-visible {
+    /* Rend l'élément totalement opaque (visible) */
+    opacity: 1;
+    
+    /* Ramène l'élément à sa position d'origine (0 pixel de décalage) */
+    transform: translateY(0);
+}
+
+/* Si le JavaScript est désactivé, on annule l'effet pour que le contenu reste accessible */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-section {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
 
         
 
