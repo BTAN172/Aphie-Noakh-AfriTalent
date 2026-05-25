@@ -66,25 +66,25 @@
                 <form id="contact-form" novalidate>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="nom" class="form-label text-body">Nom <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nom" name="nom" required>
-                            <div class="error-message text-danger small mt-1"></div>
+                            <label for="nom" class="form-label text-body">Nom</label>
+                            <input type="text" class="form-control" id="nom" name="nom" required placeholder="Entrez votre nom">
+                            <div id="name-error" class="text-danger small mt-1"></div>
                         </div>
                         
                         <div class="col-md-6">
-                            <label for="prenom" class="form-label text-body">Prénom <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" required>
+                            <label for="prenom" class="form-label text-body">Prénom</span></label>
+                            <input type="text" class="form-control" id="prenom" name="prenom" required placeholder="Entrez votre prenom">
                             <div class="error-message text-danger small mt-1"></div>
                         </div>
                 
                         <div class="col-12">
-                            <label for="email" class="form-label text-body">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                            <div class="error-message text-danger small mt-1"></div>
+                            <label for="email" class="form-label text-body">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="nom@exemple.com">
+                            <div id="email-error" class="text-danger small mt-1"></div>
                         </div>
                         
                         <div class="col-12">
-                            <label for="sujet" class="form-label text-body">Sujet <span class="text-danger">*</span></label>
+                            <label for="sujet" class="form-label text-body">Sujet</span></label>
                             <select class="form-select" id="sujet" name="sujet" required>
                                 <option value="" selected disabled>Choisissez un sujet...</option>
                                 <option value="recrutement">Recrutement de talent</option>
@@ -96,9 +96,9 @@
                         </div>
                         
                         <div class="col-12">
-                            <label for="message" class="form-label text-body">Message <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
-                            <div class="error-message text-danger small mt-1"></div>
+                            <label for="message" class="form-label text-body">Message</span></label>
+                            <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Votre message ici..."></textarea>
+                            <div id="message-error" class="text-danger small mt-1"></div>
                         </div>
                     </div>
 
@@ -110,7 +110,7 @@
                     <!-- Message de succès pour formulaire-->
                     <div id="success-message" class="alert alert-success mt-4 d-none">
                         <i class="bi bi-check-circle-fill me-2"></i>
-                        Votre message a bien été envoyé ! Nous vous répondrons dans les plus brefs délais.
+                        Votre message a bien été envoyé ! Notre équipe vous recontactera rapidement.
                     </div>
                 </form>
             </div>

@@ -530,6 +530,12 @@ body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
     }
 }
 
+/* FILTRAGE PAR CATEGORIE SUR FREELANCE */
+
+.freelance-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 
 
         

@@ -221,3 +221,163 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 });
+
+// ====================FILTRAGE PAR CATEGORIE SUR FREELANCES=====================
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const freelanceItems = document.querySelectorAll(".freelance-item");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // 1. Gérer la classe 'active' sur les boutons Bootstrap
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // 2. Récupérer le filtre sélectionné (ex: "all", "création", etc.)
+            const filterValue = this.getAttribute("data-filter");
+
+            // 3. Filtrer les profils
+            freelanceItems.forEach(item => {
+                const itemCategory = item.getAttribute("data-category");
+
+                if (filterValue === "all" || itemCategory === filterValue) {
+                    // On affiche l'élément de manière fluide
+                    item.style.display = "block";
+                    setTimeout(() => {
+                        item.style.opacity = "1";
+                        item.style.transform = "scale(1)";
+                    }, 10);
+                } else {
+                    // On cache l'élément
+                    item.style.opacity = "0";
+                    item.style.transform = "scale(0.95)";
+                    setTimeout(() => {
+                        item.style.display = "none";
+                    }, 300); // Correspond au temps de l'animation CSS
+                }
+            });
+        });
+    });
+});
+
+// =====================VALIDATION DU FORMULAIRE DE CONTACT====================
+
+// Ciblage du formulaire de contact
+const contactForm = document.getElementById("contact-form");
+
+// Sécurité : On exécute ce bloc uniquement si le formulaire est présent sur la page
+if (contactForm) {
+    // Sélection de tous les champs de saisie du nouveau HTML
+    const nomInput = document.getElementById("nom");
+    const prenomInput = document.getElementById("prenom");
+    const emailInput = document.getElementById("email");
+    const sujetSelect = document.getElementById("sujet");
+    const messageInput = document.getElementById("message");
+    
+    // Sélection des zones d'affichage des erreurs et du succès
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const messageError = document.getElementById("message-error");
+    const successMessage = document.getElementById("success-message");
+
+    // Sélection générique pour le prénom et le sujet (qui utilisent la classe .error-message dans votre HTML)
+    const prenomError = prenomInput.nextElementSibling;
+    const sujetError = sujetSelect.nextElementSibling;
+
+    // Écoute de l'événement de soumission (clic sur "Envoyer")
+    contactForm.addEventListener("submit", (e) => {
+        // Empêche le rechargement complet de la page
+        e.preventDefault(); 
+
+        // Variable témoin de validité
+        let isFormValid = true;
+        
+        // Réinitialisation de tous les messages textuels d'erreur
+        nameError.textContent = "";
+        emailError.textContent = "";
+        messageError.textContent = "";
+        if (prenomError) prenomError.textContent = "";
+        if (sujetError) sujetError.textContent = "";
+        
+        // On cache le bandeau de succès par défaut
+        successMessage.classList.add("d-none"); 
+        
+        // On nettoie les anciennes bordures de couleur Bootstrap (vert/rouge) sur tous les champs
+        const allInputs = [nomInput, prenomInput, emailInput, sujetSelect, messageInput];
+        allInputs.forEach(input => {
+            if (input) input.classList.remove("is-invalid", "is-valid");
+        });
+
+        // --- 1. VALIDATION : NOM ---
+        if (nomInput.value.trim() === "") {
+            nameError.textContent = "Le nom est obligatoire.";
+            nomInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else {
+            nomInput.classList.add("is-valid");
+        }
+
+        // --- 2. VALIDATION : PRÉNOM ---
+        if (prenomInput.value.trim() === "") {
+            if (prenomError) prenomError.textContent = "Le prénom est obligatoire.";
+            prenomInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else {
+            prenomInput.classList.add("is-valid");
+        }
+
+        // --- 3. VALIDATION : ADRESSE EMAIL ---
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput.value.trim() === "") {
+            emailError.textContent = "L'adresse email est obligatoire.";
+            emailInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = "Veuillez entrer une adresse email valide.";
+            emailInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else {
+            emailInput.classList.add("is-valid");
+        }
+
+        // --- 4. VALIDATION : SUJET ---
+        if (sujetSelect.value === "") {
+            if (sujetError) sujetError.textContent = "Veuillez sélectionner un sujet.";
+            sujetSelect.classList.add("is-invalid");
+            isFormValid = false;
+        } else {
+            sujetSelect.classList.add("is-valid");
+        }
+
+        // --- 5. VALIDATION : MESSAGE (20 CARACTÈRES MIN) ---
+        const messageValue = messageInput.value.trim();
+        if (messageValue === "") {
+            messageError.textContent = "Le message ne peut pas être vide.";
+            messageInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else if (messageValue.length < 20) {
+            messageError.textContent = `Votre message est trop court (minimum 20 caractères, actuel : ${messageValue.length}).`;
+            messageInput.classList.add("is-invalid");
+            isFormValid = false;
+        } else {
+            messageInput.classList.add("is-valid");
+        }
+
+        // --- 6. TRAITEMENT EN CAS DE SUCCÈS ---
+        if (isFormValid) {
+            // Affiche le bandeau de succès vert
+            successMessage.classList.remove("d-none");
+            
+            // Vide l'intégralité du formulaire
+            contactForm.reset();
+            
+            // Optionnel : Retire proprement les bordures vertes après 4 secondes
+            setTimeout(() => {
+                allInputs.forEach(input => {
+                    if (input) input.classList.remove("is-valid");
+                });
+            }, 4000);
+        }
+    });
+}
