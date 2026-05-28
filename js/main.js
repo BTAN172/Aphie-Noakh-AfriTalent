@@ -82,7 +82,7 @@ window.addEventListener('scroll', function() {
     if (navbar) {
         // Si on descend à plus de 50 pixels du haut de la page
         if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');    // On applique le style compact/ombré
+            navbar.classList.add('navbar-scrolled');    // On applique le style compact
         } else {
             navbar.classList.remove('navbar-scrolled'); // On réapplique le style transparent/large d'origine
         }
@@ -281,7 +281,7 @@ if (contactForm) {
     const messageError = document.getElementById("message-error");
     const successMessage = document.getElementById("success-message");
 
-    // Sélection générique pour le prénom et le sujet (qui utilisent la classe .error-message dans votre HTML)
+    // Sélection générique pour le prénom et le sujet (qui utilisent la classe .error-message dans le HTML)
     const prenomError = prenomInput.nextElementSibling;
     const sujetError = sujetSelect.nextElementSibling;
 
@@ -372,7 +372,7 @@ if (contactForm) {
             // Vide l'intégralité du formulaire
             contactForm.reset();
             
-            // Optionnel : Retire proprement les bordures vertes après 4 secondes
+            //  Retire proprement les bordures vertes après 4 secondes
             setTimeout(() => {
                 allInputs.forEach(input => {
                     if (input) input.classList.remove("is-valid");

@@ -1,158 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <script>
-        // Utilisation d'une fonction anonyme immédiatement exécutée (IIFE) 
-       // pour s'exécuter instantanément et éviter de polluer l'espace global.
-        (function () {
-            const savedTheme = localStorage.getItem('theme');
-            // 2. On vérifie si le système d'exploitation ou le navigateur de l'utilisateur 
-           // est configuré par défaut sur un mode sombre (Dark Mode)
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            // 3. Condition d'activation du Mode Sombre :
-           // Si l'utilisateur a explicitement choisi 'dark' au cours d'une visite précédente OR
-          // s'il n'a fait aucun choix mais que son système demande du mode sombre par défaut
-            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-                document.documentElement.setAttribute('data-bs-theme', 'dark');
-                // Sinon, par défaut ou si le choix 'light' était sauvegardé, on applique le thème clair
-            } else {
-                document.documentElement.setAttribute('data-bs-theme', 'light');
-            }
-        })();
-    </script>
-</head>
-<body>
-     <header class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-          <img src="images/logos.png" width="150" height="50">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+       <link rel="stylesheet" href="css/style.css">
+       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+       <script>
+           // Utilisation d'une fonction anonyme immédiatement exécutée (IIFE) 
+          // pour s'exécuter instantanément et éviter de polluer l'espace global.
+           (function () {
+               const savedTheme = localStorage.getItem('theme');
+               // 2. On vérifie si le système d'exploitation ou le navigateur de l'utilisateur 
+              // est configuré par défaut sur un mode sombre (Dark Mode)
+               const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+               // 3. Condition d'activation du Mode Sombre :
+              // Si l'utilisateur a explicitement choisi 'dark' au cours d'une visite précédente OR
+             // s'il n'a fait aucun choix mais que son système demande du mode sombre par défaut
+               if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                   document.documentElement.setAttribute('data-bs-theme', 'dark');
+                   // Sinon, par défaut ou si le choix 'light' était sauvegardé, on applique le thème clair
+               } else {
+                   document.documentElement.setAttribute('data-bs-theme', 'light');
+               }
+           })();
+       </script>
+    </head>
+    <body>
+        <header class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+          <img src="images/logos.png" width="150" height="50" alt="logo afritalent">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnav" aria-controls="navbarnav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
             <nav class="container-fluid">
                 <div class="collapse navbar-collapse " id="navbarnav">
-                    <ul type="none" class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto list-unstyled">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Acceuil</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="freelances.html">Freelances</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifs.html">Tarifs</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">A propos</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
-                        <div class="d-flex align-items-center ms-3 gap-2">
-                            <a href="contact.html" class="btn btn-warning">Rejoindre AfriTalent</a>
-                            <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="Changer de thème">
-                               <span id="theme-toggle-icon">🌙</span>
-                            </button>
-                        </div>
                     </ul>
+                    <div class="d-flex align-items-center ms-3 gap-2">
+                        <a href="contact.html" class="btn btn-warning">Rejoindre AfriTalent</a>
+                        <button id="theme-toggle" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" aria-label="Changer de thème">
+                           <span id="theme-toggle-icon">🌙</span>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </header>
         
-    <section id="section">
-        <div>
-            <h3 class="catalogue">Formulaire de contact</h3>
-            <h4 class="solution">Notre équipe s'engage à vous répondre sous 24 à 48 heures pour transformer vos projets en opportunités concrètes pour le continent.</h4>
-        </div>
-    </section>
-    <div  class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-6">
-                <h2 class=" h2 mb-4">Envoyez-nous un message</h2>
-                
-                <form id="contact-form" novalidate>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label for="nom" class="form-label text-body">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" required placeholder="Entrez votre nom">
-                            <div id="name-error" class="text-danger small mt-1"></div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <label for="prenom" class="form-label text-body">Prénom</span></label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" required placeholder="Entrez votre prenom">
-                            <div class="error-message text-danger small mt-1"></div>
-                        </div>
-                
-                        <div class="col-12">
-                            <label for="email" class="form-label text-body">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="nom@exemple.com">
-                            <div id="email-error" class="text-danger small mt-1"></div>
-                        </div>
-                        
-                        <div class="col-12">
-                            <label for="sujet" class="form-label text-body">Sujet</span></label>
-                            <select class="form-select" id="sujet" name="sujet" required>
-                                <option value="" selected disabled>Choisissez un sujet...</option>
-                                <option value="recrutement">Recrutement de talent</option>
-                                <option value="partenariat">Partenariat</option>
-                                <option value="support">Support technique</option>
-                                <option value="autre">Autre demande</option>
-                            </select>
-                            <div class="error-message text-danger small mt-1"></div>
-                        </div>
-                        
-                        <div class="col-12">
-                            <label for="message" class="form-label text-body">Message</span></label>
-                            <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Votre message ici..."></textarea>
-                            <div id="message-error" class="text-danger small mt-1"></div>
-                        </div>
-                    </div>
+       <section id="section">
+           <div>
+               <h1 class="catalogue">Formulaire de contact</h1>
+               <h2 class="solution h4">Notre équipe s'engage à vous répondre sous 24 à 48 heures pour transformer vos projets en opportunités concrètes pour le continent.</h2>
+           </div>
+       </section>
+     <div  class="container py-5">
+         <div class="row g-5">
+             <div class="col-lg-6">
+                 <h2 class=" h2 mb-4">Envoyez-nous un message</h2>
+                 
+                 <form id="contact-form" novalidate>
+                     <div class="row g-3">
+                         <div class="col-md-6">
+                             <label for="nom" class="form-label text-body">Nom</label>
+                             <input type="text" class="form-control" id="nom" name="nom" required placeholder="Entrez votre nom">
+                             <div id="name-error" class="text-danger small mt-1"></div>
+                         </div>
+                         
+                         <div class="col-md-6">
+                             <label for="prenom" class="form-label text-body">Prénom</label>
+                             <input type="text" class="form-control" id="prenom" name="prenom" required placeholder="Entrez votre prenom">
+                             <div class="error-message text-danger small mt-1"></div>
+                         </div>
+                 
+                         <div class="col-12">
+                             <label for="email" class="form-label text-body">Email</label>
+                             <input type="email" class="form-control" id="email" name="email" required placeholder="nom@exemple.com">
+                             <div id="email-error" class="text-danger small mt-1"></div>
+                         </div>
+                         
+                         <div class="col-12">
+                             <label for="sujet" class="form-label text-body">Sujet</label>
+                             <select class="form-select" id="sujet" name="sujet" required>
+                                 <option value="" selected disabled>Choisissez un sujet...</option>
+                                 <option value="recrutement">Recrutement de talent</option>
+                                 <option value="partenariat">Partenariat</option>
+                                 <option value="support">Support technique</option>
+                                 <option value="autre">Autre demande</option>
+                              </select>
+                             <div class="error-message text-danger small mt-1"></div>
+                         </div>
+                         
+                         <div class="col-12">
+                             <label for="message" class="form-label text-body">Message</label>
+                             <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Votre message ici..."></textarea>
+                             <div id="message-error" class="text-danger small mt-1"></div>
+                         </div>
+                     </div>
+ 
+                     <!-- Bouton pour envoyer le message -->
+                     <button type="submit" class="btn btn-warning btn-lg w-100 mt-4" id="submit-btn">
+                         <span id="btn-text">Envoyer</span>
+                     </button>
+ 
+                     <!-- Message de succès pour formulaire-->
+                     <div id="success-message" class="alert alert-success mt-4 d-none">
+                         <i class="bi bi-check-circle-fill me-2"></i>
+                         Votre message a bien été envoyé ! Notre équipe vous recontactera rapidement.
+                     </div>
+                 </form>
+             </div>
+ 
+              <!-- INFORMATIONS DE CONTACT + MAPS -->
+             <div class="col-lg-5">
+                 <div class="sticky-top" style="top: 100px;">
+                     <h2 class=" h2 mb-4">Nos informations personelles</h2>
+                     
+                     <div class="mb-4">
+                         <p><i class="bi bi-envelope-fill text-primary me-3"></i>Mail: <strong>aphienoakhbsemetati@gmail.com</strong></p>
+                         <p><i class="bi bi-telephone-fill text-primary me-3"></i>Tel: <strong>+221 172 77 14</strong></p>
+                         <p><i class="bi bi-geo-alt-fill text-primary me-3"></i> Adresse: <strong>Dakar, Sénégal<br>
+                              12 Rue des Entrepreneurs, Almadies </strong></p>
+                     </div>
+ 
+                     <!-- Carte Google -->
+                     <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+                         <iframe 
+                          src="https://maps.google.com/maps?q=14.690917691477004,-17.459252320736045&hl=fr&z=15&output=embed" 
+                          height="450" 
+                          style="border:0; width:100% ;" 
+                           allowfullscreen="" 
+                          loading="lazy">
+                         </iframe>
+                     </div>
+                 </div>
+             </div>
+ 
+         </div>
+     </div>
 
-                    <!-- Bouton pour envoyer le message -->
-                    <button type="submit" class="btn btn-warning btn-lg w-100 mt-4" id="submit-btn">
-                        <span id="btn-text">Envoyer</span>
-                    </button>
-
-                    <!-- Message de succès pour formulaire-->
-                    <div id="success-message" class="alert alert-success mt-4 d-none">
-                        <i class="bi bi-check-circle-fill me-2"></i>
-                        Votre message a bien été envoyé ! Notre équipe vous recontactera rapidement.
-                    </div>
-                </form>
-            </div>
-
-            <!-- INFORMATIONS DE CONTACT + MAPS -->
-            <div class="col-lg-5">
-                <div class="sticky-top" style="top: 100px;">
-                    <h2 class=" h2 mb-4">Nos informations personelles</h2>
-                    
-                    <div class="mb-4">
-                        <p><i class="bi bi-envelope-fill text-primary me-3"></i>Mail: <strong>aphienoakhbsemetati@gmail.com</strong></p>
-                        <p><i class="bi bi-telephone-fill text-primary me-3"></i>Tel: <strong>+221 172 77 14</strong></p>
-                        <p><i class="bi bi-geo-alt-fill text-primary me-3"></i> Adresse: <strong>Dakar, Sénégal<br>
-                             12 Rue des Entrepreneurs, Almadies </strong></p>
-                    </div>
-
-                    <!-- Carte Google -->
-                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
-                        <iframe 
-                         src="https://maps.google.com/maps?q=14.690917691477004,-17.459252320736045&hl=fr&z=15&output=embed" 
-                         width="100%" 
-                         height="450" 
-                         style="border:0;" 
-                          allowfullscreen="" 
-                         loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-<!-- pied de page -->
-    <footer  class="bg-black text-white py-4" >
+     <!-- pied de page -->
+        <footer  class="bg-black text-white py-4" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 text-end">
                        <img src="images/logos.png" alt="Logo AfriTalent" style="max-height: 140px;" class="img-fluid"  > 
                     </div>
                     <div class="col-md-3">
-                      <h4 style="color: #00008B;" class="fw-bold">AfriTalent </h4>
+                      <h3 style="color: #00008B;" class="fw-bold h4">AfriTalent </h3>
                       <p>La plateforme n°1 de mise <br> en relation tech en Afrique. </p>
                     </div>
                    <div class="col-md-2">
@@ -168,18 +167,18 @@
                    </div>
                    <div class="col-md-2">
                     <h4 style="color:#00008B;" class="fw-bold">Contact</h4>
-                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="40" height="40"></a>
-                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="40" height="40"></a>
-                        <a href="callto:+221781727714"><img src="images/tel.png" width="30" height="30"></a>
+                        <a href="mailto:aphienoakhbsemetati@gmail.com"><img src="images/mail.png" width="40" height="40" alt="mail"></a>
+                        <a href="https://wa.me/+221781727714?text=Bonjour"><img src="images/whatsapp_logo.png" width="40" height="40" alt="whatsapp"></a>
+                        <a href="callto:+221781727714"><img src="images/tel.png" width="30" height="30" alt="telephone"></a>
                    </div>
                 </div>
             </div>
             <p class="text-center mb-0">&copy; 2026 AfriTalent by BTAN tous droits reservés</p>
         </footer>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
-         <script src="js/main.js"></script>
-         <button id="backToTop" class="btn btn-warning" title="Retour en haut">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+        <script src="js/main.js"></script>
+        <button id="backToTop" class="btn btn-warning" title="Retour en haut">
             <span style="font-size: 20px; font-weight: bold; line-height: 1;">&uarr;</span>
         </button>    
-</body>
+    </body>
 </html>

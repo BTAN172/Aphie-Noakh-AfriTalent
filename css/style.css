@@ -1,11 +1,13 @@
+/* Réinitialisation de base pour éviter les marges par défaut des navigateurs */
 *{
     margin: 0;
 }
+/* Importation de la police d'écriture 'Poppins et Monsterrat' depuis les serveurs Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-/* Les six variables css dans root */
+/* Déclaration des six variables css dans root */
 :root{
      --border-radius: 12px;
-     --transition: all 0.3s ease;
+     --text-align: center;
      --primary-color:rgb(255, 255, 255);
      --secondary-color:rgb(4, 4, 4);
      --accent-color: #fca616;
@@ -15,14 +17,14 @@
 .nav-link:active {
     color: var(--accent-color) !important; 
 }
-/* Pour un effet de fondu fluide */
+/* Pour un effet de couleur au survol de la souris */
 .nav-link:hover {
     color: var(--accent-color)!important; 
 }
 /* Pour le bouton "Rejoindre AfriTalent" */
 
 body{ /* toutes les pages */
-    background: var(--bs-body-bg);
+    background: var(--bs-body-bg); /* Utilise le fond dynamique par défaut de Bootstrap */
     line-height: 1.5;
     font-family: 'Montserrat', sans-serif;
    
@@ -52,12 +54,12 @@ body{ /* toutes les pages */
 }
 /* nav de la section heros */
 .nav{
-     margin-bottom: 80px;
+     margin-bottom: 80px; /* Repousse le contenu situé en dessous */
 }
 /* h1 se trouvant dans nav de la section heros */
 .nav h1{
     font-size: 60px;
-    text-align: center;
+    text-align: var(--text-align);
 }
 /* h2 se trouvant dans nav de la section heros */
 .nav h2{
@@ -68,19 +70,20 @@ body{ /* toutes les pages */
 .b2{
   display: inline-block;
   border: 1px, solid ;
-  padding: 7.5px 15px;
-  margin-top: 100px;
+  padding: 7.5px 15px; 
+  margin-top: 100px; /* Décolle le bouton du texte supérieur */
   color: rgb(243, 243, 245);
   border-radius : var(--border-radius);
   background: transparent;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Lettres capitales */
   box-shadow: 0 0 10px 5px rgb(244, 247, 248);  
   
 }
+/* Effet d'animation dynamique au survol des boutons de l'accueil */
 .b2:hover{
-     transform: rotate(10deg);
-    box-shadow: inherit;
+     transform: rotate(10deg); /* Légère rotation de 10 degrés */
+    box-shadow: inherit; /* Conserve l'ombre d'origine */
 }
 /* div se trouvant dans nav de la section heros */
 .container-boutons { /* Espace entre les deux boutons */
@@ -96,8 +99,9 @@ body{ /* toutes les pages */
     gap: 20px;                             /* L'espacement  */
     padding: 20px;
 }
+/* Titre de la section Bento */
 .h2{
-    text-align: center;
+    text-align: var(--text-align);
     margin-top: 100px;
     color: var(--accent-color);
     margin-bottom: 40px;
@@ -125,27 +129,27 @@ body{ /* toutes les pages */
     border-radius: var(--border-radius);
     padding: 20px;
     margin: 15px;
-    text-align: center;
+    text-align: var(--text-align);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère par défaut */
     transition: all 0.3s ease-in-out; /* Animation fluide pour tout changement */
-    cursor: pointer;
+    cursor: pointer; /* Curseur en forme de main */
     border: 1px solid #eee;
 }
 
 /* --- categorie de services---// effet hover au survol */
 .card:hover {
-    /* 1. Transformation : Soulèvement de la carte */
+    /* Soulèvement de la carte de 25px */
     transform: translateY(-25px); 
     
-    /* 2. Ombre : Plus profonde pour l'effet de flottement */
+    /* Ombre Plus profonde pour l'effet de flottement */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     
-    /* 3. Changement de couleur de bordure ou fond */
+    /* Changement de couleur de bordure */
     border-color: rgb(18, 12, 133); 
 }
 
 /* Changer la couleur du titre au survol */
-.card:hover h5 {
+.card:hover h3 {
     color: var(--accent-color);
 }
 
@@ -159,7 +163,7 @@ body{ /* toutes les pages */
   
   /* Crée 3 colonnes de taille égale (1 fraction de l'espace disponible) */
   grid-template-columns: repeat(3, 1fr); 
-   /* Espacement entre les colonnes et les lignes (optionnel) */
+   /* Espacement entre les colonnes et les lignes  */
   gap: 40px; 
 }
 .item {
@@ -174,116 +178,125 @@ body{ /* toutes les pages */
     width: 100%;
     padding-top: 100px;          /* Ajoute du padding pour que le texte ne colle pas à la navbar */
 }
-
+/* Titre principal du catalogue */
 .catalogue{ 
     color: #f8e9e9;
     font-size: 60px;
-    text-align: center;
+    text-align: var(--text-align);
     font-weight: 700;
     padding: 80px;
 }
+/* Sous-titre d'accompagnement */
 .solution{
     color:#fde9e9;
     font-size: 40px;
-    text-align: center;
-     font-weight: 400;
+    text-align: var(--text-align);
+    font-weight: 400;
 }
 
 #filtre{
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 100px; /* Donne de l'espace avant d'attaquer la liste des freelances */
 }
+
 /* ==============================Tarifs.html============================== */
-        .card {
+    /* Surcharge locale du style des cartes d'abonnement/prix */  
+     .card {
             background: white;
             padding: 30px;
             border-radius: var(--border-radius);
-            text-align: center;
+            text-align:var(--text-align);
             position: relative;
             transition: transform 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid transparent; /* Prépare une bordure transparente pour éviter les sauts au hover */
         }
+     /* Mise en valeur textuelle du prix (gros et gras) */
         .price {
             font-size: 2.5rem;
             color: var(--secondary-color);
             margin: 15px 0;
         }
-
+     /* Texte de description sous le prix */
         .description {
             color: #64748b;
             font-style: italic;
             margin-bottom: 25px;
-            display: block;
+            display: block; /* Permet d'appliquer correctement les marges */
         }
-
+     /* Liste à puces des fonctionnalités incluses dans le prix */
         .features li {
             margin-bottom: 12px;
-            display: flex;
+            display: flex; /* Permet d'aligner une icône/un check horizontalement avec le texte */
             align-items: center;
             color: #0c0c0c;
         }
 /* ==============================about.html============================== */
-        #nav{
+    /* Bannière principale de la page À Propos */    
+    #nav{
         background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar3.png);
         background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
         background-position: center; 
         min-height: 700px;           /* Ajuste la hauteur de l image */
         padding-top: 100px;          /* Ajoute du padding pour que le texte ne colle pas à la navbar */
         }
+        /* Titre stylisé avec une police classique (Serif) pour briser la monotonie */
         .nav-h{
-            text-align: center;
+            text-align: var(--text-align);
             color:var(--accent-color);
             font-family: 'Times New Roman', Times, serif;
             font-size:60px ;
         }
-        #nav h3{
+        /* Sous-titre de la section À Propos */
+        #nav h2{
+            text-align: var(--text-align);
             color: white;
             font-family: 'Montserrat', sans-serif; 
-            font-size: 30px;
+            font-size: 40px;
+            padding: 40px;
         }
 /* ================================= CONTACT.HTML =========================== */
-
+/* Bloc blanc enveloppant le formulaire */
 #contact-form {
     background-color: var(--primary-color);
     padding: 12px;
     border-radius: var(--border-radius);
 }
-
+/* Champs textuels et listes déroulantes du formulaire */
 #contact-form .form-control,
 #contact-form .form-select {
     border-radius:var(--border-radius);
     padding: 12px;
     border: 1px solid #ddd; 
 }
-
+/* Effet d'illumination (focus) quand l'utilisateur clique dans un champ */
 #contact-form .form-control:focus,
 #contact-form .form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem var(--accent-color);
 }
-
+/* Bloque le redimensionnement manuel de la zone de message par l'utilisateur */
 #contact-form textarea {
     resize: none;
 }
-
+/* Libellés des champs (ex: "Nom", "Email") */
 #contact-form .form-label {
     font-weight: 500;
 }
-
+/* Messages de restriction sous les champs */
 #contact-form .error-message {
     font-size: 0.85rem;
 }
-
+/* Bouton d'envoi du formulaire */
 #submit-btn {
     border-radius:var(--border-radius);
     padding: 12px;
     font-weight: 600;
 }
-
+/* Effet de micro-soulèvement du bouton d'envoi au survol */
 #submit-btn:hover {
     transform: translateY(-2px);
 }
-
+/* Conteneur affichant le message de confirmation après validation */
 #success-message {
     border-radius: var(--border-radius);
 }
@@ -328,7 +341,7 @@ body{ /* toutes les pages */
     .bento-grid, .grille-container {
         grid-template-columns: 1fr !important;
     }
-
+/* Annulation des étalements de colonnes Bento pour le mobile */
     .bento-grid article:nth-child(1),
     .bento-grid article:nth-child(4) {
         grid-column: span 1 !important;
@@ -337,6 +350,7 @@ body{ /* toutes les pages */
 
 /*2. TABLETTE (Testé à 768px)*/
 @media (min-width: 768px) and (max-width: 1199px) {
+    /* Taille intermédiaire pour les grands titres */
     .nav h1, .catalogue, .nav-h {
         font-size: 45px;
     }
@@ -349,27 +363,26 @@ body{ /* toutes les pages */
 
 /*3. DESKTOP (Tessté à 1200px)*/
 @media (min-width: 1200px) {
+    /* Largeur fixe maximale pour centrer proprement le site sur grand écran */
     .container {
         max-width: 1140px;
         margin: 0 auto;
     }
-    
-    /* je garde mes styles originaux (60px) qui sont parfaits ici */
 }
    
 /* ====================STYLISATION DU SOMBRE GLOBAL ==================== */
 
-/* --- 1. CONFIGURATION EN MODE CLAIR (RETOUR STRICT À TON DESIGN) --- */
+/* --- 1. CONFIGURATION EN MODE CLAIR (RETOUR STRICT À MON DESIGN) --- */
 html[data-bs-theme="light"] body {
-    background-color: #eaeaea !important;
+    background-color: #eaeaea !important; /* Gris clair texturé pour le fond du site */
 }
-
+/* Force la transparence de certains arrière-plans pour laisser respirer le design */
 html[data-bs-theme="light"] section, 
 html[data-bs-theme="light"] .py-5, 
 html[data-bs-theme="light"] .bg-white {
     background-color: transparent !important; 
 }
-    
+ /* Assure un fond blanc pur et un texte sombre pour les entrées du formulaire */   
 html[data-bs-theme="light"] .form-control, 
 html[data-bs-theme="light"] input, 
 html[data-bs-theme="light"] textarea, 
@@ -383,15 +396,15 @@ html[data-bs-theme="light"] select {
 /* Style initial de la navbar (tout en haut) */
 .navbar {
     padding: 20px 0 !important;
-    background-color: #000000 !important; /* Ton fond noir de départ */
+    background-color: #000000 !important; /* Mon fond noir de départ */
     transition: padding 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease !important;
 }
 
 /* Effet appliqué à la navbar lors du scroll */
 .navbar.navbar-scrolled {
     padding: 10px 0 !important; /* Effet shrink */
-    background-color: rgba(0, 0, 0, 0.95) !important; /* Fond noir légèrement translucide */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important; /* Ombre portée */
+    background-color: rgba(112, 110, 110, 0.95) !important; /* Fond noir légèrement translucide */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important; /* Ajout d'une ombre de détachement */
 }
 
 /* Style de base du bouton de retour en haut */
@@ -399,15 +412,15 @@ html[data-bs-theme="light"] select {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 99;
+    z-index: 99;  /* Reste toujours au-dessus du reste du contenu */
     width: 45px;
     height: 45px;
-    border-radius: 50% !important;
+    border-radius: 50% !important; /* Cercle parfait */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 !important;
-    opacity: 0;
+    opacity: 0;   /* Masqué par défaut (invisible) */
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -431,37 +444,37 @@ body, section, .card, article, .item, input, textarea, label {
 
 /* --- 2. CONFIGURATION EN MODE SOMBRE (UNIQUEMENT SUR ACTIVATION) --- */
 html[data-bs-theme="dark"] body {
-    background-color: #121212 !important;
-    color: #ffffff !important;
+    background-color: #121212 !important;  /* Arrière-plan noir mat d'application */
+    color: #ffffff !important;  /* Écriture blanche globale */
 }
-
+/* Assombrit les sections globales en mode sombre */
 html[data-bs-theme="dark"] section,
 html[data-bs-theme="dark"] .bg-white,
 html[data-bs-theme="dark"] div[class*="bg-"] {
     background-color: #121212 !important;
 }
-
+/* Les cartes et blocs passent sur un gris anthracite (#1e1e1e) pour se détacher du fond noir */
 html[data-bs-theme="dark"] .card, 
 html[data-bs-theme="dark"] article, 
 html[data-bs-theme="dark"] .bento-grid article, 
 html[data-bs-theme="dark"] .item,
 html[data-bs-theme="dark"] .shadow-sm {
     background-color: #1e1e1e !important;
-    border: 1px solid #2d2d2d !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid #2d2d2d !important; /* Bordure subtile pour délimiter les blocs */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important; /* Ombre plus lourde et sombre */
 }
-
+/* Teinte de la navbar scrollée en mode nuit */
 html[data-bs-theme="dark"] .navbar.navbar-scrolled {
     background-color: #1a1a1a !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
     border-bottom: 1px solid #2d2d2d !important;
 }
-
+/* Bouton retour en haut garde sa couleur d'accentuation vive la nuit */
 html[data-bs-theme="dark"] #backToTop {
     background-color: #fca616 !important;
     border: 1px solid #121212 !important;
 }
-
+/* Force la conversion en blanc de l'intégralité des textes et liens en mode sombre */
 html[data-bs-theme="dark"] h1, 
 html[data-bs-theme="dark"] h2, 
 html[data-bs-theme="dark"] h3, 
@@ -474,7 +487,8 @@ html[data-bs-theme="dark"] li,
 html[data-bs-theme="dark"] a:not(.btn) {
     color: #ffffff !important;
 }
-
+/* Force les champs de saisie, zones de texte, listes déroulantes et classes Bootstrap '.form-control' 
+   à adopter des couleurs sombres lorsque l'attribut data-bs-theme="dark" est actif sur la balise <html> */
 html[data-bs-theme="dark"] input, 
 html[data-bs-theme="dark"] textarea, 
 html[data-bs-theme="dark"] select, 
@@ -483,13 +497,15 @@ html[data-bs-theme="dark"] .form-control {
     color: #ffffff !important;
     border-color: #444444 !important;
 }
-
+/* Ajuste la couleur et le fond des labels flottants Bootstrap en mode sombre */
 html[data-bs-theme="dark"] .form-floating > label {
-    color: #aaaaaa !important;
-    background-color: transparent !important;
+    color: #aaaaaa !important; /* Texte du label en gris clair */
+    background-color: transparent !important; /* Évite les blocs de fond opaques derrière le texte */
 }
 
 /* ==================== EFFET DE TRANSITION FLUIDE ==================== */
+/* Application d'une transition douce sur les propriétés de couleur et de fond 
+   pour les principaux éléments textuels, conteneurs et formulaires */
 body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
@@ -515,7 +531,7 @@ body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
 /* Configuration de l'etat visible (état final) */
 
 .fade-in-section.is-visible {
-    /* Rend l'élément totalement opaque (visible) */
+    /* Rend l'élément totalement visible */
     opacity: 1;
     
     /* Ramène l'élément à sa position d'origine (0 pixel de décalage) */
@@ -525,13 +541,14 @@ body, h1, h2, h3, h4, p, .card, article, .item, input, textarea {
 /* Si le JavaScript est désactivé, on annule l'effet pour que le contenu reste accessible */
 @media (prefers-reduced-motion: reduce) {
     .fade-in-section {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1 !important; 
+        transform: none !important; 
     }
 }
 
 /* FILTRAGE PAR CATEGORIE SUR FREELANCE */
-
+/* Permet aux éléments de la grille freelance de se masquer, s'afficher 
+   ou se déplacer de manière fluide lors de l'utilisation de filtres */
 .freelance-item {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
