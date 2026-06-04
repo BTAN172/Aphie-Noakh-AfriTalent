@@ -37,7 +37,7 @@ body{ /* toutes les pages */
 /* ================================INDEX.HTML================================= */
 /* Styliser la section heros */
 .heros{
-     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar1.png);
+     background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(https://btan172.github.io/Aphie-Noakh-AfriTalent/images/ar1.png);
      gap: 100px;
       padding: 100px;
        align-items: center;
@@ -171,7 +171,7 @@ body{ /* toutes les pages */
 }
 /* ==============================FREELANCE.HTML==============================*/
 #section{
-    background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar2.png);
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(https://btan172.github.io/Aphie-Noakh-AfriTalent/images/ar2.png);
     background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
     background-position: center; 
     min-height: 700px;           /* Ajuste la hauteur de l image */
@@ -233,7 +233,7 @@ body{ /* toutes les pages */
 /* ==============================about.html============================== */
     /* Bannière principale de la page À Propos */    
     #nav{
-        background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(../Images/ar3.png);
+        background-image:linear-gradient(to bottom,rgb(0,0,0,0.5), rgb(0,0,0,0.5)), url(https://btan172.github.io/Aphie-Noakh-AfriTalent/images/ar3.png);
         background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
         background-position: center; 
         min-height: 700px;           /* Ajuste la hauteur de l image */
@@ -251,7 +251,7 @@ body{ /* toutes les pages */
             text-align: var(--text-align);
             color: white;
             font-family: 'Montserrat', sans-serif; 
-            font-size: 40px;
+            font-size: 35px;
             padding: 40px;
         }
 /* ================================= CONTACT.HTML =========================== */
